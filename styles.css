@@ -59,6 +59,10 @@ body {
     max-width: 420px;
 }
 
+.hero-text a {
+    margin-top: 10px;
+}
+
 .content {
     padding: 32px 24px;
 }
