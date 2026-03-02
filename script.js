@@ -41,3 +41,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+if (window.axe) {
+    axe.run(document, {}, function (err, results) {
+        if (err) {
+            console.error("Fel vid axe-körning:", err);
+            return;
+        }
+
+        console.log("Axe violations:", results.violations.length);
+        console.log("Axe incomplete:", results.incomplete.length);
+        console.log("Axe inapplicable:", results.inapplicable.length);
+        console.log("Axe passes:", results.passes.length);
+
+        results.violations.forEach(function (violation, index) {
+            console.log(`Problem ${index + 1}: ${violation.id}`);
+            console.log("Beskrivning:", violation.description);
+            console.log("Hjälp:", violation.help);
+            console.log("Berörda element:", violation.nodes);
+        });
+    });
+}
