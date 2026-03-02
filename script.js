@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    var newsletterButton = document.querySelector(".newsletter .primary-button");
-    if (newsletterButton) {
-        newsletterButton.addEventListener("click", function (e) {
+    var newsletterForm = document.querySelector(".newsletter form");
+    if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
             e.preventDefault();
             alert("Thank you for subscribing!");
         });
